@@ -85,7 +85,7 @@ foreach ($fileList as $filename => $f) {
     $counts = array_fill_keys($occuringErrorTypes, 0);
 
     foreach ($f->getIssues() as $issue) {
-        $counts[$issue->foundBy] += 1;
+        $counts[$issue->foundBy] = (int) $counts[$issue->foundBy] + 1;
     }
 
     echo "                    <tr class='$tag'>" . PHP_EOL;
